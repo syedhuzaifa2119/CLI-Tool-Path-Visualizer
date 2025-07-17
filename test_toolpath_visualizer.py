@@ -346,18 +346,6 @@ class ToolPathVisualizer:
         if np.max(heat_map) > 0:
             self.ax.contourf(X, Y, heat_map, levels=20, cmap='hot', alpha=0.6)
 
-    def add_current_heat_source(self, x, y):
-        """Original simple heat source (kept for reference)"""
-        size = self.heat_sigma * 3
-        x_range = np.linspace(x - size, x + size, 30)
-        y_range = np.linspace(y - size, y + size, 30)
-        X, Y = np.meshgrid(x_range, y_range)
-        
-        r_squared = (X - x)**2 + (Y - y)**2
-        heat_map = self.heat_intensity * np.exp(-r_squared / (2 * self.heat_sigma**2))
-        
-        if np.max(heat_map) > 0:
-            self.ax.contourf(X, Y, heat_map, levels=15, cmap='hot', alpha=0.8)
 
     def reset_animation(self):
         self.is_playing = False
