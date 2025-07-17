@@ -3,7 +3,7 @@ A Python GUI application for visualizing CNC tool paths from CLI files with heat
 
 ## Features
 
-- Parse CLI files with layer support
+- Parse CLI files with layers
 - Visualize tool paths with heat distribution
 - Animate tool movement step-by-step
 - Layer Switching  
